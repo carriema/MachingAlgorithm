@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Http} from "@angular/http";
 import {Input} from "@angular/core";
 import {SelectService} from "../service/service";
+import {User} from "./user.model";
 
 @Component({
   selector: 'app-userlist',
@@ -10,15 +11,13 @@ import {SelectService} from "../service/service";
 })
 export class UserlistComponent implements OnInit {
 
-  users: any[];
+  users: any[] = [];
 
-  constructor(private selectService: SelectService) { }
+  constructor(private service: SelectService) { }
 
   ngOnInit() {
-    this.selectService.userSubscribe.subscribe((data) => {
-      data.map(userInfo => {
-        this.users.push({'firstName': userInfo.firstName, 'lastName': userInfo.lastName, 'country': userInfo.country});
-      });
+    this.service.userObservable.subscribe((users) => {
+      this.users = users;
     });
   }
 

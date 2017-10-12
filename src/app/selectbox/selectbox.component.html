@@ -1,9 +1,9 @@
-<div class="checkboxWrapper">
-  <div class="checkbox-inline" *ngFor="let country of selectContent">
-    <label><input type="checkbox" value="" [(ngModel)]="country.selected">{{country.name}}</label>
+<div>
+  <div class="checkboxWrapper" *ngFor="let country of selectContent">
+      <label><input type="checkbox" value="" [(ngModel)]="country.selected">{{country.name}}</label>
   </div>
-  <div class="checkbox-inline">
-    <label><input type="checkbox" value="" (change)="checkAll($event)">ALL</label>
+  <div>
+      <label *ngIf="selectContent.length !== 0"><input type="checkbox" value="" (change)="checkAll($event)">ALL</label>
   </div>
 </div>
 

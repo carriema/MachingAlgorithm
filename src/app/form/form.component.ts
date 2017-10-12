@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {SelectService} from "../service/service";
+import {Output} from "@angular/core/src/metadata/directives";
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
 
@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
     this.devices = this.selectService.getAllDevices();
   }
   queryDataList() {
-   this.selectService.getAllUsers(this.countries, this.devices);
+    this.selectService.getAllUsers(this.countries, this.devices);
   }
 
 }

@@ -28,7 +28,7 @@ router.get('/testers', (req, res) => {
   var params = req.query;
   var devices = params.devices;
   var countries = params.countries;
-  Task.getTesters([devices, devices, countries], (err, rows) => {
+  Task.getTesters([devices, countries], (err, rows) => {
     if (err) {
       console.log(err);
     } else {

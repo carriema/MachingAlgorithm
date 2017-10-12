@@ -10,17 +10,13 @@ import {FormsModule} from "@angular/forms";
 import {SelectService} from "./service/service";
 import {Route, RouterModule} from "@angular/router";
 
-const appRoutes : Route[]= [
-  {path:'/users', component: UserlistComponent}
-]
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectBoxComponent,
     UserlistComponent,
-    FormComponent,
-    RouterModule.forRoot(appRoutes)
+    FormComponent
   ],
   imports: [
     BrowserModule,
