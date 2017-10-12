@@ -1,8 +1,10 @@
 
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
+import {Subscription, Subject, Observable} from "rxjs";
 @Injectable()
 export class SelectService {
+  userSubscribe: Observable;
   constructor(private http: Http) {}
 
   getAllArea() {
@@ -31,15 +33,8 @@ export class SelectService {
     countries.filter(data => data.selected).map(data => {countryArray.push(data.name)});
     devices.filter(data => data.selected).map(data => {deviceArray.push(data.deviceId)});
 
-    var users = [];
     console.log({'countries': countryArray, 'devices': deviceArray});
-    this.http.get('/testers', {params: {'countries': countryArray, 'devices': deviceArray}}).map(res => res.json()).subscribe((data) => {
-      data.map(userInfo => {
-        users.push({'firstName': userInfo.firstName, 'lastName': userInfo.lastName, 'country': userInfo.country});
-      });
-    });
-    return users;
-
+    this.userSubscribe = this.http.get('/testers', {params: {'countries': countryArray, 'devices': deviceArray}}).map(res => res.json());
   }
 
 

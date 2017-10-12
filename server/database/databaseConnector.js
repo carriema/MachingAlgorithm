@@ -6,7 +6,8 @@ var mysql = require('mysql');
 //   database:'heroku_fe4a2ca1e95fa75'
 // });
 
-var connection = mysql.createConnection({
+var connection = mysql.createPool({
+  connectionLimit: 4,
   host:'localhost',
   user: 'root',
   password:'Ma19921013',

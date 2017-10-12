@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../database/Task');
-const mysql = require('../database/databaseConnector');
 const url = require('url');
-mysql.connect();
 
 
 router.get('/countries', (req, res) => {

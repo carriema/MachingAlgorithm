@@ -10,7 +10,6 @@ export class FormComponent implements OnInit {
 
   countries: any[];
   devices: any[];
-  userInfo: any[];
   constructor(private selectService: SelectService) { }
 
   ngOnInit() {
@@ -18,7 +17,7 @@ export class FormComponent implements OnInit {
     this.devices = this.selectService.getAllDevices();
   }
   queryDataList() {
-    this.userInfo = this.selectService.getAllUsers(this.countries, this.devices);
+   this.selectService.getAllUsers(this.countries, this.devices);
   }
 
 }

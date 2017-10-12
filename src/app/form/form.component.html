@@ -1,8 +1,7 @@
 <form>
   Countries: <select-box [selectContent] = "countries"></select-box>
   Devices: <select-box [selectContent]="devices"></select-box>
-  <button (click)="queryDataList()">Search</button>
+  <button (click)="queryDataList()" [routerLink]="['/users']">Search</button>
 </form>
-<app-userlist [users]="userInfo"></app-userlist>
 
 

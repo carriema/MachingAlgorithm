@@ -10,12 +10,16 @@ import {SelectService} from "../service/service";
 })
 export class UserlistComponent implements OnInit {
 
-  users: any[] = [];
+  users: any[];
 
-  constructor(private http : Http, private selectService: SelectService) { }
+  constructor(private selectService: SelectService) { }
 
   ngOnInit() {
-    this.users = this.selectService.getAllUsers();
+    this.selectService.userSubscribe.subscribe((data) => {
+      data.map(userInfo => {
+        this.users.push({'firstName': userInfo.firstName, 'lastName': userInfo.lastName, 'country': userInfo.country});
+      });
+    });
   }
 
 }
