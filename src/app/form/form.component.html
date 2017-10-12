@@ -1,9 +1,13 @@
-<form>
-  <h3>Countries:</h3>
-  <select-box [selectContent] = "countries"></select-box>
-  <h3>Devices:</h3>
-  <select-box [selectContent]="devices"></select-box>
+<div class="list-group">
+  <li class="list-group-item">
+    <h3>Countries:</h3>
+    <select-box [selectContent] = "countries"></select-box>
+  </li>
+  <li class="list-group-item">
+    <h3>Devices:</h3>
+    <select-box [selectContent]="devices"></select-box>
+  </li>
   <button class="btn btn-primary" (click)="queryDataList()">Search</button>
-</form>
+</div>
 
 

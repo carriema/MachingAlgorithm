@@ -1,9 +1,9 @@
 <div>
   <div class="checkboxWrapper" *ngFor="let country of selectContent">
-      <label><input type="checkbox" value="" [(ngModel)]="country.selected">{{country.name}}</label>
+      <label><input type="checkbox" value="" [(ngModel)]="country.selected" required>{{country.name}}</label>
   </div>
   <div>
-      <label *ngIf="selectContent.length !== 0"><input type="checkbox" value="" (change)="checkAll($event)">ALL</label>
+      <label *ngIf="selectContent.length !== 0"><input type="checkbox" value="" (change)="checkAll($event)" required>ALL</label>
   </div>
 </div>
 
