@@ -36,7 +36,7 @@ Country: values should be collected from "tester.csv" and should also have an op
 Device: values should be collected from "devices.csv" and should also have an option for "ALL". User can select one or more devices. Multiple selections are treated as "OR". 
 
  
-Walk Through Example 1 
+_Walk Through Example 1 
 
 Search Criteria: Country="ALL" and Device="iPhone 4"
 
@@ -52,7 +52,7 @@ User2 filed 10 bugs for iPhone 4.
 
 Results: User2, User1
 
-Walk Through Example 2 
+_Walk Through Example 2 
 
 Search Criteria: Country="ALL" and Device="iPhone 4" or "iPhone 5"
 
@@ -68,7 +68,7 @@ User2 filed 10 bugs for iPhone 4.
 
 Results: User1, User2
 
-Walk Through Example 3
+_Walk Through Example 3
 
 Search Criteria: Country="ALL" and Device="iPhone 6" 
 
